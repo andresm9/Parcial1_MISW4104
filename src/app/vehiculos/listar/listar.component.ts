@@ -12,12 +12,19 @@ import { VehiculosService } from '../vehiculos.service';
 export class ListarComponent implements OnInit {
 
   vehiculos: Vehiculo[] = [];
+  cuentaMarcas?: Map<string, number>;
 
   constructor(private service: VehiculosService) { }
 
   ngOnInit(): void {
-    this.service.vehiculos$.subscribe(data => this.vehiculos = data);
+
+    this.service.vehiculos$.subscribe(data => {
+      this.vehiculos = data;
+      this.cuentaMarcas = this.service.getMarcas(data)
+    });
+
     this.service.getVehiculos();
+
   }
 
 }

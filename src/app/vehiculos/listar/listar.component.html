@@ -20,4 +20,11 @@
                 }
             </tbody>
         </table>
+        <div class="card">
+            <div class="card-body">
+                @for (item of cuentaMarcas?.entries(); track $index) {
+                 <p>Total {{item[0]}}: {{item[1]}}</p>
+                }
+            </div>
+        </div>
     </div>
