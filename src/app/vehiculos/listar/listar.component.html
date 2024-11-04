@@ -1,0 +1,23 @@
+
+    <div class="col-6 py-2">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="table-dark">#</th>
+                    <th class="table-dark">Marca</th>
+                    <th class="table-dark">Linea</th>
+                    <th class="table-dark">Modelo</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (item of vehiculos; track $index) {
+                <tr>
+                    <td>{{item.id}}</td>
+                    <td>{{item.marca}}</td>
+                    <td>{{item.linea}}</td>
+                    <td>{{item.modelo}}</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
